@@ -1,0 +1,16 @@
+html, body, #container{
+	margin: 0px;
+	font-family: Arial;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+
+#vine_section {
+	height: 100%;
+	width: 20%;
+}
+
+.vine_video {
+	width: 100%;
+}
