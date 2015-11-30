@@ -7,10 +7,23 @@ html, body, #container{
 }
 
 #vine_section {
+	position: absolute;
+	left: 0%;
 	height: 100%;
 	width: 20%;
 }
 
 .vine_video {
+	width: 100%;
+}
+
+#reddit_section {
+	position: absolute;
+	left: 20%;
+	height: 100%;
+	width: 20%;
+}
+
+.reddit_video {
 	width: 100%;
 }

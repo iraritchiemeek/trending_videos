@@ -5,7 +5,8 @@ $(document).ready(function(){
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
 	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=20'
 
-	view.appendVineSection()
+	view.appendDiv($('#container'), 'vine_section')
+	view.appendDiv($('#container'), 'reddit_section')
 
 	//
 
@@ -26,7 +27,7 @@ $(document).ready(function(){
 	 	type: "GET",
 	 	url: reddit_url,
 	 	success: function(res){
-	 		console.log(res)
+	 		view.displayRedditVideos(res)
 	 	},
 	 	error: function(){
 	 		alert('Something went Wrong')
