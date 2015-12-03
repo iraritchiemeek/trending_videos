@@ -22,11 +22,12 @@ html, body, #container{
 }
 
 .video_player {
+	background-color: lightblue;
+    opacity: 0.9;
 	top: 50%;
  	left: 50%;
- 	position: absolute;
+ 	position: fixed;
  	transform: translateX(-50%) translateY(-50%);
-	background-color: red;
 	height: 480px;
 	width: 845px;
 }

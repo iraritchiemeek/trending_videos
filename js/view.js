@@ -8,10 +8,6 @@ View.prototype.setupPlayer = function(player_class) {
 	$('#container').append('<div class=" video_player ' + player_class + '"></div>')
 };
 
-View.prototype.appendDiv = function(target, name) {
-	$(target).append('<div id="' + name + '"></div>')
-};
-
 View.prototype.setupFrames = function() {
 	var index = 0, n = 0
 	for (var i = 40 - 1; i >= 0; i--) {
