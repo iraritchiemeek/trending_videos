@@ -4,9 +4,10 @@ $(document).ready(function(){
 	var videoList = new VideoList
 
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
-	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=20'
+	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=10'
 
 	view.setupFrames()
+	view.setupPlayer('vine_player')
 
 	//
 

@@ -4,6 +4,10 @@ function View () {
 
 }
 
+View.prototype.setupPlayer = function(player_class) {
+	$('#container').append('<div class=" video_player ' + player_class + '"></div>')
+};
+
 View.prototype.appendDiv = function(target, name) {
 	$(target).append('<div id="' + name + '"></div>')
 };
