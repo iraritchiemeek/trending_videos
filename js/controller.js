@@ -23,15 +23,15 @@ $(document).ready(function(){
 	 	}
 	})
 
-	// $.ajax({
-	//  	type: "GET",
-	//  	url: reddit_url,
-	//  	success: function(res){
-	//  		view.displayRedditVideos(res)
-	//  	},
-	//  	error: function(){
-	//  		alert('Something went Wrong')
-	//  	}
-	// })
+	$.ajax({
+	 	type: "GET",
+	 	url: reddit_url,
+	 	success: function(res){
+	 		videoList.getRedditPoster(res)
+	 	},
+	 	error: function(){
+	 		alert('Something went Wrong')
+	 	}
+	})
 
 })
