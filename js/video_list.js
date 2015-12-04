@@ -1,6 +1,14 @@
 function VideoList () {
 
+	this.frame_types = []
+
 }
+
+VideoList.prototype.addFrameType = function(type) {
+	for (var i = 10 -1; i >= 0; i--) {
+		this.frame_types.push(type + '_frame')
+	};
+};
 
 VideoList.prototype.getVinePoster = function(vine_res) {
 	console.log(vine_res)

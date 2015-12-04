@@ -1,22 +1,18 @@
 function View () {
 
-	this.frame_types = ['vine_frame', 'reddit_frame', 'youtube_frame', 'facebook_frame']
-
 }
 
 View.prototype.setupPlayer = function(player_class) {
 	$('#container').append('<div class=" video_player ' + player_class + '"></div>')
 };
 
-View.prototype.setupFrames = function() {
-	var index = 0, n = 0
-	for (var i = 40 - 1; i >= 0; i--) {
-		n++
-		$('#container').append('<div class="frame ' + this.frame_types[index] + '"></div>')
-		if (n === 10) {
-			index += 1
-			n = 0
-		}
+View.prototype.setupFrames = function(frames_array) {
+	var index = 0
+	for (var i = 30 - 1; i >= 0; i--) {
+		var index = randomBetween(0, frames_array.length - 1)
+		var frame_type = frames_array[index]
+		frames_array.splice(index, 1)
+		$('#container').append('<div class="frame ' + frame_type + '"></div>')
 	};
 };
 

@@ -7,9 +7,13 @@ $(document).ready(function(){
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
 	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=10'
 
-	view.setupFrames()
-	view.setupPlayer('vine_player')
+	videoList.addFrameType('vine')
+	videoList.addFrameType('reddit')
+	videoList.addFrameType('youtube')
+	view.setupFrames(videoList.frame_types)
 
+	view.setupPlayer('vine_player')
+	
 	//
 
 	$.ajax({
