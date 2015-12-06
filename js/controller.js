@@ -19,6 +19,7 @@ $(document).ready(function(){
 	view.setupFrames(videoList.frame_types)
 
 	view.setupPlayer('vine_player')
+	view.addDimOverlay()
 
 	getVineRes()
 	getRedditRes()
@@ -54,7 +55,6 @@ $(document).ready(function(){
 		})
 	}
 
-
 	function getYoutubeRes() {
 		youtube_page_count += 1
 		if (youtube_page_count <= 2) {
@@ -78,8 +78,12 @@ $(document).ready(function(){
 		getYoutubeRes()
 	}
 
-	$('#container').on('click', function(e){
-		videoPlayer.setupVinePlayer(e.target.attributes[1].value)
+	$('.vine_frame').on('click', function(e){
+		videoPlayer.popoutVinePlayer(e.target.attributes[1].value)
+	})
+
+	$('.frame').on('click', function(e){
+		view.dimLights()
 	})
 
 })

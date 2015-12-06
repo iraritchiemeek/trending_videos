@@ -16,3 +16,10 @@ View.prototype.setupFrames = function(frames_array) {
 	};
 };
 
+View.prototype.addDimOverlay = function() {
+	$('#container').append('<div id="dim_overlay"></div>')
+};
+
+View.prototype.dimLights = function() {
+	$('#dim_overlay').fadeIn('slow')
+};
