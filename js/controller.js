@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 	var youtube_key = 'AIzaSyBIXrRzt0wuxO-pm8H89RhPJrZ3AWySFos'
 	var youtube_url = 'https://www.googleapis.com/youtube/v3/videos'
-	var youtube_params = {chart: 'mostPopular', regionCode: 'nz', part: 'contentDetails', key: youtube_key}
+	var youtube_params = {chart: 'mostPopular', regionCode: 'nz', part: 'contentDetails, snippet', key: youtube_key}
 	
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
 	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=10'
@@ -23,7 +23,6 @@ $(document).ready(function(){
 	getVineRes()
 	getRedditRes()
 	getYoutubeRes()
-
 
 	//
 
@@ -64,8 +63,8 @@ $(document).ready(function(){
 			 	url: youtube_url,
 			 	data: youtube_params,
 			 	success: function(res){
-			 		console.log(res)
 			 		addNextPageToken(res.nextPageToken)
+			 		videoList.getYoutubePoster(res)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')

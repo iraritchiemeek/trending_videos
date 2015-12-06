@@ -1,5 +1,6 @@
 function VideoList () {
 
+	this.youtube_frame_num = 0
 	this.frame_types = []
 
 }
@@ -20,6 +21,14 @@ VideoList.prototype.getVinePoster = function(vine_res) {
 VideoList.prototype.getRedditPoster = function(reddit_res) {
 	for (var i = reddit_res.data.children.length - 1; i >= 0; i--) {
 		this.setVideoPoster($('.reddit_frame')[i],reddit_res.data.children[i].data.media.oembed.thumbnail_url)
+	};
+};
+
+VideoList.prototype.getYoutubePoster = function(youtube_res) {
+	for (var i = youtube_res.items.length - 1; i >= 0; i--) {
+		console.log(this.youtube_frame_num)
+		this.setVideoPoster($('.youtube_frame')[this.youtube_frame_num], youtube_res.items[i].snippet.thumbnails.high.url)
+		this.youtube_frame_num ++
 	};
 };
 
