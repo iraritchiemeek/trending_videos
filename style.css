@@ -15,14 +15,18 @@ html, body, #container{
 
 .video_player {
 	z-index: 1;
-}
-
-#vine_player {
-	display: none;
 	top: 50%;
  	left: 50%;
  	position: fixed;
  	transform: translateX(-50%) translateY(-50%);
+}
+
+#youtube_player {
+	display: none;
+}
+
+#vine_player {
+	display: none;
 }
 
 #vine_video video {

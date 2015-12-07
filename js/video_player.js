@@ -1,5 +1,4 @@
 function VideoPlayer () {
-	
 }
 
 VideoPlayer.prototype.popoutVinePlayer = function(video_url) {
@@ -9,5 +8,7 @@ VideoPlayer.prototype.popoutVinePlayer = function(video_url) {
 }
 
 VideoPlayer.prototype.popoutYoutubePlayer = function(videoID) {
+	console.log('yes')
+	$('#youtube_player').show()
 	youtube_player.loadVideoById({videoId: videoID})
 }

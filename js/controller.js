@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	
 	var youtube_page_count = 0
+	var youtube_player
 
 	var view = new View
 	var videoList = new VideoList
@@ -85,8 +86,7 @@ $(document).ready(function(){
 		videoPlayer.popoutVinePlayer(e.target.attributes[1].value)
 	})
 
-	$('#youtube_frame').on('click', function(e){
-		console.log('yaaaas')
+	$('.youtube_frame').on('click', function(e){
 		videoPlayer.popoutYoutubePlayer(e.target.dataset.video_url)
 	})
 
