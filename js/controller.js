@@ -49,6 +49,7 @@ $(document).ready(function(){
 		 	type: "GET",
 		 	url: reddit_url,
 		 	success: function(res){
+		 		console.log(res)
 		 		videoList.getRedditPoster(res)
 		 	},
 		 	error: function(){
