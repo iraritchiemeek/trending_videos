@@ -19,6 +19,7 @@ $(document).ready(function(){
 	view.setupFrames(videoList.frame_types)
 
 	view.setupPlayer('vine_player')
+	view.setupPlayer('youtube_player')
 	view.addDimOverlay()
 
 	getVineRes()
@@ -34,7 +35,7 @@ $(document).ready(function(){
 		 	dataType: "json",
 		 	crossDomain: true,
 		 	success: function(res){
-		 		videoList.getVinePoster(res)
+		 		videoList.setupVineFrame(res)
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -64,7 +65,7 @@ $(document).ready(function(){
 			 	data: youtube_params,
 			 	success: function(res){
 			 		addNextPageToken(res.nextPageToken)
-			 		videoList.getYoutubePoster(res)
+			 		videoList.setupYoutubeFrame(res)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')
@@ -73,6 +74,8 @@ $(document).ready(function(){
 		}
 	}
 
+	//
+
 	function addNextPageToken (next_page_token) {
 		$.extend(youtube_params, {pageToken: next_page_token})
 		getYoutubeRes()
@@ -80,6 +83,11 @@ $(document).ready(function(){
 
 	$('.vine_frame').on('click', function(e){
 		videoPlayer.popoutVinePlayer(e.target.attributes[1].value)
+	})
+
+	$('#youtube_frame').on('click', function(e){
+		console.log('yaaaas')
+		videoPlayer.popoutYoutubePlayer(e.target.dataset.video_url)
 	})
 
 	$('.frame').on('click', function(e){

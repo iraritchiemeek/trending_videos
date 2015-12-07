@@ -17,7 +17,7 @@ html, body, #container{
 	z-index: 1;
 }
 
-.vine_player {
+#vine_player {
 	display: none;
 	top: 50%;
  	left: 50%;
@@ -44,3 +44,4 @@ html, body, #container{
 	background: -webkit-radial-gradient(circle, white, black, black);
 	background: radial-gradient(circle, white, black, black);
 }
+

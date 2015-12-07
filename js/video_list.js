@@ -11,7 +11,7 @@ VideoList.prototype.addFrameType = function(type) {
 	};
 };
 
-VideoList.prototype.getVinePoster = function(vine_res) {
+VideoList.prototype.setupVineFrame = function(vine_res) {
 	for (var i = 10 - 1; i >= 0; i--) {
 		this.setVideoPoster($('.vine_frame')[i], vine_res.data.records[i].thumbnailUrl)
 		this.setVideoUrlData($('.vine_frame')[i], vine_res.data.records[i].videoUrl)
@@ -24,11 +24,12 @@ VideoList.prototype.getRedditPoster = function(reddit_res) {
 	};
 };
 
-VideoList.prototype.getYoutubePoster = function(youtube_res) {
+VideoList.prototype.setupYoutubeFrame = function(youtube_res) {
 	for (var i = youtube_res.items.length - 1; i >= 0; i--) {
-		console.log(this.youtube_frame_num)
-		this.setVideoPoster($('.youtube_frame')[this.youtube_frame_num], youtube_res.items[i].snippet.thumbnails.high.url)
+		var $target = $('.youtube_frame')[this.youtube_frame_num]
+		this.setVideoPoster($target, youtube_res.items[i].snippet.thumbnails.high.url)
 		this.youtube_frame_num ++
+		this.setVideoUrlData($target, youtube_res.items[i].id)
 	};
 };
 
