@@ -13,8 +13,7 @@ VideoList.prototype.addFrameType = function(type) {
 
 VideoList.prototype.setupVineFrame = function(vine_res) {
 	for (var i = 10 - 1; i >= 0; i--) {
-		this.setVideoPoster($('.vine_frame')[i], vine_res.data.records[i].thumbnailUrl)
-		this.setVideoUrlData($('.vine_frame')[i], vine_res.data.records[i].videoUrl)
+		this.createVineIframe($('.vine_frame')[i], vine_res.data.records[i].thumbnailUrl, vine_res.data.records[i].videoUrl)
 	};
 };
 
@@ -31,6 +30,10 @@ VideoList.prototype.setupYoutubeFrame = function(youtube_res) {
 		this.youtube_frame_num ++
 		this.setVideoUrlData($target, youtube_res.items[i].id)
 	};
+};
+
+VideoList.prototype.createVineIframe = function(target, img_url, vid_url) {
+	$(target).append('<video controls poster="' + img_url + '" class="vine_iframe"><source src="' + vid_url + '" type="video/mp4"></video>')
 };
 
 VideoList.prototype.setVideoPoster = function(target, poster) {

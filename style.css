@@ -97,3 +97,18 @@ html, body, #container{
 	background-size: 100%;
 	background-position: center;
 }
+
+.vine_frame {
+	padding-bottom: 0px; !important
+}
+
+.vine_iframe {
+	overflow: hidden;
+	top: 0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+}
+
+.vine_frame video {
+}
