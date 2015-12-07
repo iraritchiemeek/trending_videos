@@ -32,8 +32,16 @@ VideoList.prototype.setupYoutubeFrame = function(youtube_res) {
 	};
 };
 
+VideoList.prototype.playVine = function(event_res) {
+	$(event_res.target)[0].play()
+};
+
+VideoList.prototype.pauseVine = function(event_res) {
+	$(event_res.target)[0].pause()
+};
+
 VideoList.prototype.createVineIframe = function(target, img_url, vid_url) {
-	$(target).append('<video controls poster="' + img_url + '" class="vine_iframe"><source src="' + vid_url + '" type="video/mp4"></video>')
+	$(target).append('<video loop poster="' + img_url + '" class="vine_iframe"><source src="' + vid_url + '" type="video/mp4"></video>')
 };
 
 VideoList.prototype.setVideoPoster = function(target, poster) {

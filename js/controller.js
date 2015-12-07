@@ -95,4 +95,12 @@ $(document).ready(function(){
 		view.dimLights()
 	})
 
+	$('.vine_frame').on('mouseenter', function(e){
+		videoList.playVine(e)
+	})
+
+	$('.vine_frame').on('mouseleave', function(e){
+		videoList.pauseVine(e)
+	})
+
 })
