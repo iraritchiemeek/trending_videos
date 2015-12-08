@@ -6,6 +6,8 @@ $(document).ready(function(){
 	var view = new View
 	var videoList = new VideoList
 	var videoPlayer = new VideoPlayer
+	var vineFrame = new VineFrame
+	var youtubeFrame = new YoutubeFrame
 
 	var youtube_key = 'AIzaSyBIXrRzt0wuxO-pm8H89RhPJrZ3AWySFos'
 	var youtube_url = 'https://www.googleapis.com/youtube/v3/videos'
@@ -36,7 +38,7 @@ $(document).ready(function(){
 		 	dataType: "json",
 		 	crossDomain: true,
 		 	success: function(res){
-		 		videoList.setupVineFrame(res)
+		 		vineFrame.setupVineFrame(res)
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -66,9 +68,8 @@ $(document).ready(function(){
 			 	url: youtube_url,
 			 	data: youtube_params,
 			 	success: function(res){
-			 		console.log(res)
 			 		addNextPageToken(res.nextPageToken)
-			 		videoList.setupYoutubeFrame(res)
+			 		setUpYoutubeFrame(res)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')
@@ -79,7 +80,16 @@ $(document).ready(function(){
 
 	//
 
-	function addNextPageToken (next_page_token) {
+	function setUpYoutubeFrame(res) {
+		for (var i = res.items.length - 1; i >= 0; i--) {
+			var $target = $('.youtube_frame')[youtubeFrame.youtube_frame_num]
+			videoList.setVideoPoster($target, res.items[i].snippet.thumbnails.high.url)
+			youtubeFrame.youtube_frame_num ++
+			videoList.setVideoUrlData($target, res.items[i].id)
+		}
+	}
+
+	function addNextPageToken(next_page_token) {
 		$.extend(youtube_params, {pageToken: next_page_token})
 		getYoutubeRes()
 	}
@@ -97,11 +107,11 @@ $(document).ready(function(){
 	})
 
 	$('.vine_frame').on('mouseenter', function(e){
-		videoList.playVine(e)
+		vineFrame.playVine(e)
 	})
 
 	$('.vine_frame').on('mouseleave', function(e){
-		videoList.pauseVine(e)
+		vineFrame.pauseVine(e)
 	})
 
 	$('#dim_overlay').on('click', function(){
