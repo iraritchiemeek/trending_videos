@@ -66,6 +66,7 @@ $(document).ready(function(){
 			 	url: youtube_url,
 			 	data: youtube_params,
 			 	success: function(res){
+			 		console.log(res)
 			 		addNextPageToken(res.nextPageToken)
 			 		videoList.setupYoutubeFrame(res)
 			 	},
@@ -101,6 +102,12 @@ $(document).ready(function(){
 
 	$('.vine_frame').on('mouseleave', function(e){
 		videoList.pauseVine(e)
+	})
+
+	$('#dim_overlay').on('click', function(){
+		videoPlayer.stopVideo()
+		videoPlayer.hideVideo()
+		view.hideDimOverlay()
 	})
 
 })

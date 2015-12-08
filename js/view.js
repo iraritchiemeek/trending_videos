@@ -23,3 +23,7 @@ View.prototype.addDimOverlay = function() {
 View.prototype.dimLights = function() {
 	$('#dim_overlay').fadeIn('slow')
 };
+
+View.prototype.hideDimOverlay = function() {
+	$('#dim_overlay').fadeOut('slow')
+};
