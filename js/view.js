@@ -18,8 +18,8 @@ View.prototype.setupFrames = function(frames_array) {
 
 View.prototype.addFrameInfoDiv = function() {
 	for (var i = $('.frame').length - 1; i >= 0; i--) {
-		var frame_type = $('.frame')[i].className.split(/\s+/)
-		console.log(frame_type[1])
+		var frame_type = $('.frame')[i].className.split(/\s+/)[1]
+		$($('.frame')[i]).append('<div class="frame_info ' + frame_type + '_info"></div>')
 	};
 };
 

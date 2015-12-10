@@ -45,6 +45,7 @@ html, body, #container{
 }
 
 .frame {
+	position: relative;
 	display: inline-block;
 	width: 25%;
 	padding-bottom: 25%;
@@ -99,9 +100,18 @@ html, body, #container{
 }
 
 .vine_frame {
-	padding-bottom: 0px; !important
+	padding-bottom: 0px;
 }
 
 .vine_iframe {
 	width: 100%;
+}
+
+.frame_info {
+	position: absolute;
+	height: 12.5%;
+	width: 100%;
+	bottom: 0%;
+	background-color: white;
+	opacity: 0.8;
 }
