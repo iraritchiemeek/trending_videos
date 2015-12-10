@@ -8,6 +8,7 @@ $(document).ready(function(){
 	var videoPlayer = new VideoPlayer
 	var vineFrame = new VineFrame
 	var youtubeFrame = new YoutubeFrame
+	var redditFrame = new RedditFrame(videoList)
 
 	var youtube_key = 'AIzaSyBIXrRzt0wuxO-pm8H89RhPJrZ3AWySFos'
 	var youtube_url = 'https://www.googleapis.com/youtube/v3/videos'
@@ -51,8 +52,8 @@ $(document).ready(function(){
 		 	type: "GET",
 		 	url: reddit_url,
 		 	success: function(res){
-		 		console.log(res)
-		 		videoList.getRedditPoster(res)
+		 		redditFrame.getRedditPoster(res)
+		 		redditFrame.getYoutubeId(res)
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -98,7 +99,7 @@ $(document).ready(function(){
 		videoPlayer.popoutVinePlayer(e.target.attributes[1].value)
 	})
 
-	$('.youtube_frame').on('click', function(e){
+	$('.youtube_frame, .reddit_frame').on('click', function(e){
 		videoPlayer.popoutYoutubePlayer(e.target.dataset.video_url)
 	})
 

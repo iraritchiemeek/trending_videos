@@ -10,12 +10,6 @@ VideoList.prototype.addFrameType = function(type) {
 	};
 };
 
-VideoList.prototype.getRedditPoster = function(reddit_res) {
-	for (var i = reddit_res.data.children.length - 1; i >= 0; i--) {
-		this.setVideoPoster($('.reddit_frame')[i],reddit_res.data.children[i].data.media.oembed.thumbnail_url)
-	};
-};
-
 VideoList.prototype.setVideoPoster = function(target, poster) {
 	$(target).css({'background-image':'url(' + poster + ')'})
 };
