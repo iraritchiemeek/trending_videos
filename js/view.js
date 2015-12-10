@@ -16,6 +16,13 @@ View.prototype.setupFrames = function(frames_array) {
 	};
 };
 
+View.prototype.addFrameInfoDiv = function() {
+	for (var i = $('.frame').length - 1; i >= 0; i--) {
+		var frame_type = $('.frame')[i].className.split(/\s+/)
+		console.log(frame_type[1])
+	};
+};
+
 View.prototype.addDimOverlay = function() {
 	$('#container').append('<div id="dim_overlay"></div>')
 };

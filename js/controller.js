@@ -21,6 +21,7 @@ $(document).ready(function(){
 	videoList.addFrameType('reddit')
 	videoList.addFrameType('youtube')
 	view.setupFrames(videoList.frame_types)
+	view.addFrameInfoDiv()
 
 	view.setupPlayer('vine_player')
 	view.setupPlayer('youtube_player')
