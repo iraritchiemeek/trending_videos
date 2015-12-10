@@ -15,7 +15,7 @@ $(document).ready(function(){
 	var youtube_params = {chart: 'mostPopular', regionCode: 'nz', part: 'contentDetails, snippet', key: youtube_key}
 	
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
-	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=10'
+	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=15'
 
 	videoList.addFrameType('vine')
 	videoList.addFrameType('reddit')
@@ -52,6 +52,7 @@ $(document).ready(function(){
 		 	type: "GET",
 		 	url: reddit_url,
 		 	success: function(res){
+		 		redditFrame.filterYoutube(res)
 		 		redditFrame.getRedditPoster(res)
 		 		redditFrame.getYoutubeId(res)
 		 	},
