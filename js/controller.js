@@ -22,6 +22,9 @@ $(document).ready(function(){
 	videoList.addFrameType('youtube')
 	view.setupFrames(videoList.frame_types)
 	view.addFrameInfoDiv()
+	view.addFrameInfoLogo('vine', 'imgs/vine.png')
+	view.addFrameInfoLogo('reddit', 'imgs/reddit-alien.png')
+	view.addFrameInfoLogo('youtube', 'imgs/youtube.png')
 
 	view.setupPlayer('vine_player')
 	view.setupPlayer('youtube_player')

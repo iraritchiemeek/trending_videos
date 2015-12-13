@@ -34,3 +34,10 @@ View.prototype.dimLights = function() {
 View.prototype.hideDimOverlay = function() {
 	$('#dim_overlay').fadeOut('slow')
 };
+
+View.prototype.addFrameInfoLogo = function(frameType, url) {
+	for (var i = $('.' + frameType + '_frame').length - 1; i >= 0; i--) {
+		$($('.' + frameType + '_frame_info')[i]).append('<div class="logo ' + frameType + '_logo"></div>')
+	};
+};
+
