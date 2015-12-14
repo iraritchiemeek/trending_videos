@@ -20,11 +20,17 @@ $(document).ready(function(){
 	videoList.addFrameType('vine')
 	videoList.addFrameType('reddit')
 	videoList.addFrameType('youtube')
+	
 	view.setupFrames(videoList.frame_types)
+	
 	view.addFrameInfoDiv()
-	view.addFrameInfoLogo('vine', 'imgs/vine.png')
-	view.addFrameInfoLogo('reddit', 'imgs/reddit-alien.png')
-	view.addFrameInfoLogo('youtube', 'imgs/youtube.png')
+	view.addFrameInfoLogo('vine')
+	view.addFrameInfoLogo('reddit')
+	view.addFrameInfoLogo('youtube')
+
+	view.addFrameInfoVotes('vine')
+	view.addFrameInfoVotes('reddit')
+	view.addFrameInfoVotes('youtube')
 
 	view.setupPlayer('vine_player')
 	view.setupPlayer('youtube_player')

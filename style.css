@@ -114,16 +114,46 @@ html, body, #container{
 	height: 15%;
 	width: 100%;
 	bottom: 0%;
-	background-color: black;
+	/*background-color: white;*/
 	opacity: 0.8;
 }
 
-.vine_logo {
+.logo {
+	/*left: 5%;*/
+	background-position: center;
 	top: 10%;
-	width: 100%;
-	height: 100%;
-	background-size: 10%;
+	width: 20%;
+	height: 80%;
 	position: absolute;
 	background-repeat: no-repeat;
+}
+
+.vine_logo {
+	background-size: 50%;
 	background-image: url('imgs/vine.png');
+}
+
+.reddit_logo {
+	background-size: 60%;
+	background-image: url('imgs/reddit-alien.png');
+}
+
+.youtube_logo {
+	background-size: 70%;
+	background-image: url('imgs/youtube.png');
+}
+
+.votes {
+	right: 0%;
+	top: 20%;
+	width: 20%;
+	height: 80%;
+	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.reddit_votes {
+	background-size: 50%;
+	background-image: url('imgs/upvote.png');
 }
