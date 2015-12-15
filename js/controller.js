@@ -42,6 +42,7 @@ $(document).ready(function(){
 		 	dataType: "json",
 		 	crossDomain: true,
 		 	success: function(res){
+		 		vineFrame.setVineLink(res, videoList)
 		 		vineFrame.setupVineFrame(res)
 		 	},
 		 	error: function(){
@@ -55,11 +56,10 @@ $(document).ready(function(){
 		 	type: "GET",
 		 	url: reddit_url,
 		 	success: function(res){
-		 		// redditFrame.getUpvotes(res)
 		 		redditFrame.filterYoutube(res)
-		 		redditFrame.getRedditPoster(res)
-		 		redditFrame.getVideoId()
-		 		redditFrame.setRedditLink()
+		 		redditFrame.getRedditPoster(videoList)
+		 		redditFrame.getVideoId(videoList)
+		 		redditFrame.setRedditLink(videoList)
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -75,8 +75,9 @@ $(document).ready(function(){
 			 	url: youtube_url,
 			 	data: youtube_params,
 			 	success: function(res){
+			 		youtubeFrame.setYoutubeLink(res, videoList)
 			 		addNextPageToken(res.nextPageToken)
-			 		setUpYoutubeFrame(res)
+			 		youtubeFrame.setUpYoutubeFrame(res, videoList)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')
@@ -86,15 +87,6 @@ $(document).ready(function(){
 	}
 
 	//
-
-	function setUpYoutubeFrame(res) {
-		for (var i = res.items.length - 1; i >= 0; i--) {
-			var $target = $('.youtube_frame')[youtubeFrame.youtube_frame_num]
-			videoList.setVideoPoster($target, res.items[i].snippet.thumbnails.high.url)
-			youtubeFrame.youtube_frame_num ++
-			videoList.setVideoData($target, 'url', res.items[i].id)
-		}
-	}
 
 	function addNextPageToken(next_page_token) {
 		$.extend(youtube_params, {pageToken: next_page_token})
