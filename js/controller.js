@@ -24,13 +24,6 @@ $(document).ready(function(){
 	view.setupFrames(videoList.frame_types)
 	
 	view.addFrameInfoDiv()
-	view.addFrameInfoLogo('vine')
-	view.addFrameInfoLogo('reddit')
-	view.addFrameInfoLogo('youtube')
-
-	view.addFrameInfoVotes('vine')
-	view.addFrameInfoVotes('reddit')
-	view.addFrameInfoVotes('youtube')
 
 	view.setupPlayer('vine_player')
 	view.setupPlayer('youtube_player')
@@ -62,9 +55,11 @@ $(document).ready(function(){
 		 	type: "GET",
 		 	url: reddit_url,
 		 	success: function(res){
+		 		// redditFrame.getUpvotes(res)
 		 		redditFrame.filterYoutube(res)
 		 		redditFrame.getRedditPoster(res)
-		 		redditFrame.getYoutubeId(res)
+		 		redditFrame.getVideoId()
+		 		redditFrame.getRedditLink()
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -97,7 +92,7 @@ $(document).ready(function(){
 			var $target = $('.youtube_frame')[youtubeFrame.youtube_frame_num]
 			videoList.setVideoPoster($target, res.items[i].snippet.thumbnails.high.url)
 			youtubeFrame.youtube_frame_num ++
-			videoList.setVideoUrlData($target, res.items[i].id)
+			videoList.setVideoData($target, 'url', res.items[i].id)
 		}
 	}
 
@@ -114,10 +109,10 @@ $(document).ready(function(){
 		videoPlayer.popoutYoutubePlayer(e.target.dataset.video_url)
 	})
 
-	$('.frame').on('click', function(e){
+	$('.frame').on('click', function(){
 		view.dimLights()
 	})
-
+	
 	$('.vine_frame').on('mouseenter', function(e){
 		vineFrame.playVine(e)
 	})

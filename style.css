@@ -128,17 +128,17 @@ html, body, #container{
 	background-repeat: no-repeat;
 }
 
-.vine_logo {
+.vine_frame_logo {
 	background-size: 50%;
 	background-image: url('imgs/vine.png');
 }
 
-.reddit_logo {
+.reddit_frame_logo {
 	background-size: 60%;
 	background-image: url('imgs/reddit-alien.png');
 }
 
-.youtube_logo {
+.youtube_frame_logo {
 	background-size: 70%;
 	background-image: url('imgs/youtube.png');
 }
@@ -153,7 +153,12 @@ html, body, #container{
 	background-repeat: no-repeat;
 }
 
-.reddit_votes {
+.reddit_frame_votes {
 	background-size: 50%;
 	background-image: url('imgs/upvote.png');
+}
+
+.youtube_frame_votes {
+	background-size: 50%;
+	background-image: url('imgs/thumbs_up.png');
 }

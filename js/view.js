@@ -19,7 +19,7 @@ View.prototype.setupFrames = function(frames_array) {
 View.prototype.addFrameInfoDiv = function() {
 	for (var i = $('.frame').length - 1; i >= 0; i--) {
 		var frame_type = $('.frame')[i].className.split(/\s+/)[1]
-		$($('.frame')[i]).append('<div class="frame_info ' + frame_type + '_info"></div>')
+		$($('.frame')[i]).append('<div class="frame_info ' + frame_type + '_info"><div class="logo ' + frame_type + '_logo"></div><div class="votes ' + frame_type + '_votes"></div></div>')
 	};
 };
 
@@ -35,15 +35,4 @@ View.prototype.hideDimOverlay = function() {
 	$('#dim_overlay').fadeOut('slow')
 };
 
-View.prototype.addFrameInfoLogo = function(frameType) {
-	for (var i = $('.' + frameType + '_frame').length - 1; i >= 0; i--) {
-		$($('.' + frameType + '_frame_info')[i]).append('<div class="logo ' + frameType + '_logo"></div>')
-	};
-};
-
-View.prototype.addFrameInfoVotes = function(frameType) {
-	for (var i = $('.' + frameType + '_frame').length - 1; i >= 0; i--) {
-		$($('.' + frameType + '_frame_info')[i]).append('<div class="votes ' + frameType + '_votes"></div>')
-	};
-};
 

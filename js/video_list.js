@@ -14,6 +14,6 @@ VideoList.prototype.setVideoPoster = function(target, poster) {
 	$(target).css({'background-image':'url(' + poster + ')'})
 };
 
-VideoList.prototype.setVideoUrlData = function(target, url) {
-	$(target).attr('data-video_url', url)
+VideoList.prototype.setVideoData = function(target, name, data) {
+	$(target).attr('data-video_' + name, data)
 };
