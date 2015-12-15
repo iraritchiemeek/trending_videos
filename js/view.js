@@ -35,4 +35,7 @@ View.prototype.hideDimOverlay = function() {
 	$('#dim_overlay').fadeOut('slow')
 };
 
+View.prototype.openVideoLink = function(e) {
+	window.open(e.target.parentElement.parentElement.dataset.video_link, '_blank')
+};
 

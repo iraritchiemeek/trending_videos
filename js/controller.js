@@ -59,7 +59,7 @@ $(document).ready(function(){
 		 		redditFrame.filterYoutube(res)
 		 		redditFrame.getRedditPoster(res)
 		 		redditFrame.getVideoId()
-		 		redditFrame.getRedditLink()
+		 		redditFrame.setRedditLink()
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -125,6 +125,10 @@ $(document).ready(function(){
 		videoPlayer.stopVideo()
 		videoPlayer.hideVideo()
 		view.hideDimOverlay()
+	})
+
+	$('.logo').on('click', function(e) {
+		view.openVideoLink(e)
 	})
 
 })

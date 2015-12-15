@@ -27,16 +27,8 @@ RedditFrame.prototype.getVideoId = function() {
 	};
 };
 
-RedditFrame.prototype.getRedditLink = function() {
+RedditFrame.prototype.setRedditLink = function() {
 	for (var i = 0; i <= 10 - 1; i++) {
-		// console.log($('.reddit_frame')[i].children[0].firstChild)
-		$($('.reddit_frame')[i].children[0].firstChild).attr('href', this.valid_youtube_objects[i].data.permalink)
-		// this.videoList.setVideoData($logo_div, 'link', this.valid_youtube_objects[i].data.permalink)
+		this.videoList.setVideoData($('.reddit_frame')[i], 'link', 'http://www.reddit.com' + this.valid_youtube_objects[i].data.permalink)
 	}
 };
-
-// RedditFrame.prototype.getUpvotes = function(res) {
-// 	for (var i = .length - 1; i >= 0; i--) {
-// 		[i]
-// 	};
-// };
