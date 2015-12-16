@@ -97,23 +97,20 @@ $(document).ready(function(){
 		getYoutubeRes()
 	}
 
-	$('.vine_frame').on('click', function(e){
-		videoPlayer.popoutVinePlayer(e.target.attributes[1].value)
-	})
-
 	$('.youtube_frame, .reddit_frame').on('click', function(e){
 		videoPlayer.popoutYoutubePlayer(e.target.dataset.video_url)
 	})
 
-	$('.frame').on('click', function(){
+	$('.youtube_frame, .reddit_frame').on('click', function(){
 		view.dimLights()
 	})
 	
 	$('.vine_frame').on({
-		mouseenter: function(e){
+		mouseover: function(e){
 			vineFrame.playVine(e)
 	},
 		mouseleave: function(e){
+			vineFrame.pauseAll()
 			vineFrame.pauseVine(e)
 	}
 	})
