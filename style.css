@@ -131,17 +131,17 @@ html, body, #container{
 
 .vine_frame_logo {
 	background-size: 50%;
-	background-image: url('imgs/vine.png');
+	background-image: url('imgs/TAG_trends_vine_icons.png');
 }
 
 .reddit_frame_logo {
 	background-size: 60%;
-	background-image: url('imgs/reddit-alien.png');
+	background-image: url('imgs/TAG_trends_rediit_icons.png');
 }
 
 .youtube_frame_logo {
 	background-size: 70%;
-	background-image: url('imgs/youtube.png');
+	background-image: url('imgs/TAG_trends_YT_icons.png');
 }
 
 .votes {
@@ -152,22 +152,20 @@ html, body, #container{
 	position: absolute;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-size: 50%;
 }
 
 .reddit_frame_votes {
-	background-size: 50%;
-	background-image: url('imgs/upvote.png');
+	background-image: url('imgs/TAG_trends_arrow_icons.png');
 }
 
 .youtube_frame_votes {
-	background-size: 50%;
-	background-image: url('imgs/thumbs_up.png');
+	background-image: url('imgs/TAG_trends_thumbsup_icons.png');
 }
 
 
 .vine_frame_votes {
-	background-size: 50%;
-	background-image: url('imgs/revine.png');
+	background-image: url('imgs/TAG_trends__loop_icons.png');
 }
 .vote_count {
 	display: none;

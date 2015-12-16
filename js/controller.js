@@ -77,6 +77,7 @@ $(document).ready(function(){
 			 	url: youtube_url,
 			 	data: youtube_params,
 			 	success: function(res){
+			 		youtubeFrame.pushYoutubeVideos(res)
 			 		youtubeFrame.setYoutubeLink(res, videoList)
 			 		addNextPageToken(res.nextPageToken)
 			 		youtubeFrame.setUpYoutubeFrame(res, videoList)
