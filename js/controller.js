@@ -44,6 +44,7 @@ $(document).ready(function(){
 		 	success: function(res){
 		 		vineFrame.setVineLink(res, videoList)
 		 		vineFrame.setupVineFrame(res)
+		 		vineFrame.setLoops(res)
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -79,7 +80,7 @@ $(document).ready(function(){
 			 		youtubeFrame.setYoutubeLink(res, videoList)
 			 		addNextPageToken(res.nextPageToken)
 			 		youtubeFrame.setUpYoutubeFrame(res, videoList)
-			 		youtubeFrame.setLikes(res, videoList)
+			 		youtubeFrame.setLikes(res)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')

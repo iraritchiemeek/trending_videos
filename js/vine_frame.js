@@ -25,3 +25,10 @@ VineFrame.prototype.setVineLink = function(res, VideoList) {
 		VideoList.setVideoData($('.vine_frame')[i], 'link', res.data.records[i].permalinkUrl)
 	};
 };
+
+VineFrame.prototype.setLoops = function(res) {
+	console.log(res)
+	for (var i = 0; i <= 10 - 1; i++) {
+		$($($('.vine_frame')[i])[0].children[0].children[2]).text(res.data.records[i].loops.count)
+	};
+};

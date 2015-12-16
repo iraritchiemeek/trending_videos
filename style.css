@@ -164,6 +164,11 @@ html, body, #container{
 	background-image: url('imgs/thumbs_up.png');
 }
 
+
+.vine_frame_votes {
+	background-size: 50%;
+	background-image: url('imgs/revine.png');
+}
 .vote_count {
 	display: none;
 	background-color: black;

@@ -20,7 +20,7 @@ YoutubeFrame.prototype.setYoutubeLink = function(res, VideoList) {
 	}	
 };
 
-YoutubeFrame.prototype.setLikes = function(res, VideoList) {
+YoutubeFrame.prototype.setLikes = function(res) {
 	for (var i = 0; i <= 5 - 1; i++) {
 		$($($('.youtube_frame')[i])[0].children[0].children[2]).text(res.items[i].statistics.likeCount)
 	}
