@@ -19,7 +19,7 @@ View.prototype.setupFrames = function(frames_array) {
 View.prototype.addFrameInfoDiv = function() {
 	for (var i = $('.frame').length - 1; i >= 0; i--) {
 		var frame_type = $('.frame')[i].className.split(/\s+/)[1]
-		$($('.frame')[i]).append('<div class="frame_info ' + frame_type + '_info"><div class="logo ' + frame_type + '_logo"></div><div class="votes ' + frame_type + '_votes"></div></div>')
+		$($('.frame')[i]).append('<div class="frame_info ' + frame_type + '_info"><div class="logo ' + frame_type + '_logo"></div><div class="votes ' + frame_type + '_votes"></div><div class="vote_count"></div></div>')
 	};
 };
 
@@ -37,5 +37,13 @@ View.prototype.hideDimOverlay = function() {
 
 View.prototype.openVideoLink = function(e) {
 	window.open(e.target.parentElement.parentElement.dataset.video_link, '_blank')
+};
+
+View.prototype.displayVotes = function(e) {
+	$(e.target.nextSibling).show()
+};
+
+View.prototype.hideVotes = function(e) {
+	$(e.target.nextSibling).hide()
 };
 

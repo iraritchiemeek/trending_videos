@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 	var youtube_key = 'AIzaSyBIXrRzt0wuxO-pm8H89RhPJrZ3AWySFos'
 	var youtube_url = 'https://www.googleapis.com/youtube/v3/videos'
-	var youtube_params = {chart: 'mostPopular', regionCode: 'nz', part: 'contentDetails, snippet', key: youtube_key}
+	var youtube_params = {chart: 'mostPopular', regionCode: 'nz', part: 'contentDetails, snippet, statistics', key: youtube_key}
 	
 	var vine_url = 'http://cors.io/?u=https://api.vineapp.com/timelines/popular' 
 	var reddit_url = 'https://www.reddit.com/r/videos/top.json?sort=top&t=day&limit=15'
@@ -60,6 +60,7 @@ $(document).ready(function(){
 		 		redditFrame.getRedditPoster(videoList)
 		 		redditFrame.getVideoId(videoList)
 		 		redditFrame.setRedditLink(videoList)
+		 		redditFrame.setUpvotes()
 		 	},
 		 	error: function(){
 		 		alert('Something went Wrong')
@@ -78,6 +79,7 @@ $(document).ready(function(){
 			 		youtubeFrame.setYoutubeLink(res, videoList)
 			 		addNextPageToken(res.nextPageToken)
 			 		youtubeFrame.setUpYoutubeFrame(res, videoList)
+			 		youtubeFrame.setLikes(res, videoList)
 			 	},
 			 	error: function(){
 			 		alert('Something went Wrong')
@@ -105,12 +107,13 @@ $(document).ready(function(){
 		view.dimLights()
 	})
 	
-	$('.vine_frame').on('mouseenter', function(e){
-		vineFrame.playVine(e)
-	})
-
-	$('.vine_frame').on('mouseleave', function(e){
-		vineFrame.pauseVine(e)
+	$('.vine_frame').on({
+		mouseenter: function(e){
+			vineFrame.playVine(e)
+	},
+		mouseleave: function(e){
+			vineFrame.pauseVine(e)
+	}
 	})
 
 	$('#dim_overlay').on('click', function(){
@@ -121,6 +124,15 @@ $(document).ready(function(){
 
 	$('.logo').on('click', function(e) {
 		view.openVideoLink(e)
+	})
+
+	$('.votes').on({
+		mouseenter: function(e){
+			view.displayVotes(e)
+	},
+		mouseleave: function(e){
+			view.hideVotes(e)
+	}
 	})
 
 })

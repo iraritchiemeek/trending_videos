@@ -31,3 +31,13 @@ RedditFrame.prototype.setRedditLink = function(VideoList) {
 		VideoList.setVideoData($('.reddit_frame')[i], 'link', 'http://www.reddit.com' + this.valid_youtube_objects[i].data.permalink)
 	}
 };
+
+RedditFrame.prototype.setUpvotes = function(VideoList) {
+	for (var i = 0; i <= 10 - 1; i++) {
+		$($($('.reddit_frame')[i])[0].children[0].children[2]).text(this.valid_youtube_objects[i].data.ups)
+	}
+};
+
+
+
+
