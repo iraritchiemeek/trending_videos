@@ -25,18 +25,18 @@ html, body, #container{
 }
 
 #header_logo {
-	width: 150px;
+	width: 125px;
 	height: 125px;
 	background-position: center;
 	background-image: url('./imgs/TAG_trend_logo.png');
 	background-repeat: no-repeat;
-	background-size: 60%;
+	background-size: 70%;
 	position: fixed;
-	right: 0%;
+	right: 3%;
 }
 
 #header_title {
-	width: 300px;
+	width: 275px;
 	height: 125px;
 	background-position: center;
 	background-image: url('./imgs/TRENDS_logo.png');
@@ -136,7 +136,7 @@ html, body, #container{
 }
 
 .vine_frame_logo:hover {
-	background-image: url('imgs/TAG_trends_white_vine_icons.png');
+	background-image: url('imgs/TAG_trends_yellow_vine_icons.png');
 }
 
 .reddit_frame_logo {
@@ -145,7 +145,7 @@ html, body, #container{
 }
 
 .reddit_frame_logo:hover {
-	background-image: url('imgs/TAG_trends_white_rediit_icons.png');
+	background-image: url('imgs/TAG_trends_yellow_rediticons.png');
 }
 
 .youtube_frame_logo {
@@ -154,7 +154,7 @@ html, body, #container{
 }
 
 .youtube_frame_logo:hover {
-	background-image: url('imgs/TAG_trends_white_YT_icons.png');
+	background-image: url('imgs/TAG_trends_yellow_YTicons.png');
 }
 
 .votes {
