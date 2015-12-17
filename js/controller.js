@@ -111,7 +111,6 @@ $(document).ready(function(){
 	},
 		mouseleave: function(e){
 			vineFrame.pauseAll()
-			vineFrame.pauseVine(e)
 	}
 	})
 
@@ -123,6 +122,7 @@ $(document).ready(function(){
 
 	$('.logo').on('click', function(e) {
 		view.openVideoLink(e)
+		VineFrame.pauseAll()
 	})
 
 	$('.votes').on({

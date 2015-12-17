@@ -34,7 +34,7 @@ RedditFrame.prototype.setRedditLink = function(VideoList) {
 
 RedditFrame.prototype.setUpvotes = function(VideoList) {
 	for (var i = 0; i <= 10 - 1; i++) {
-		$($($('.reddit_frame')[i])[0].children[0].children[2]).text(this.valid_youtube_objects[i].data.ups)
+		$($($('.reddit_frame')[i])[0].children[0].children[2]).text(numberWithCommas(this.valid_youtube_objects[i].data.ups))
 	}
 };
 

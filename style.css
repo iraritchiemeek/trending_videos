@@ -127,19 +127,33 @@ html, body, #container{
 	height: 80%;
 	position: absolute;
 	background-repeat: no-repeat;
-	background-size: 70%;
 }
 
 .vine_frame_logo {
+	background-size: 60%;
 	background-image: url('imgs/TAG_trends_vine_icons.png');
 }
 
+.vine_frame_logo:hover {
+	background-image: url('imgs/TAG_trends_white_vine_icons.png');
+}
+
 .reddit_frame_logo {
+	background-size: 50%;
 	background-image: url('imgs/TAG_trends_rediit_icons.png');
 }
 
+.reddit_frame_logo:hover {
+	background-image: url('imgs/TAG_trends_white_rediit_icons.png');
+}
+
 .youtube_frame_logo {
+	background-size: 70%;
 	background-image: url('imgs/TAG_trends_YT_icons.png');
+}
+
+.youtube_frame_logo:hover {
+	background-image: url('imgs/TAG_trends_white_YT_icons.png');
 }
 
 .votes {

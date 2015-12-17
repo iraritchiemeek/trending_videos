@@ -27,6 +27,6 @@ YoutubeFrame.prototype.setYoutubeLink = function(res, VideoList) {
 
 YoutubeFrame.prototype.setLikes = function(res) {
 	for (var i = 0; i <= this.youtube_videos.length - 1; i++) {
-		$($($('.youtube_frame')[i])[0].children[0].children[2]).text(this.youtube_videos[i].statistics.likeCount)
+		$($($('.youtube_frame')[i])[0].children[0].children[2]).text(numberWithCommas(this.youtube_videos[i].statistics.likeCount))
 	}
 };

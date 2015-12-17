@@ -28,7 +28,7 @@ VineFrame.prototype.setVineLink = function(res, VideoList) {
 
 VineFrame.prototype.setLoops = function(res) {
 	for (var i = 0; i <= 10 - 1; i++) {
-		$($($('.vine_frame')[i])[0].children[0].children[2]).text(res.data.records[i].loops.count)
+		$($($('.vine_frame')[i])[0].children[0].children[2]).text(numberWithCommas(res.data.records[i].loops.count))
 	};
 };
 
